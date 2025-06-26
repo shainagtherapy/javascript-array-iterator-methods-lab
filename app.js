@@ -177,15 +177,7 @@ let sortedByBirthYear = [];
 
 // Complete the exercise in the space below:
 
-sortedByBirthYear.sort((a, b) => {
-    a.year - b.year
-}
-
-
-
-// function yearArray = (year) => {
-//     return 
-// }
+inventors.sort(a, b) => a.year - b.year
 
 sortedByBirthYear = inventors.sort
 

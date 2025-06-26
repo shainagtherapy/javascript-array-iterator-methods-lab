@@ -177,26 +177,30 @@ let sortedByBirthYear = [];
 
 // Complete the exercise in the space below:
 
-inventors.sort(a, b) => a.year - b.year
+// inventors.sort((a, b) => {
+//     let a.year - b.year
+// });
 
-sortedByBirthYear = inventors.sort
+sortedByBirthYear = inventors.sort((a, b) => {
+    return a.year - b.year;
+})
 
 // Check your work:
 console.log('Exercise 3 my result: ', sortedByBirthYear);
-console.log('Exercise 3 correct result: ', [
-  { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-  { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-  { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-  { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-  { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-  { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
-  { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-  { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-  { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-  { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-  { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-  { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-]);
+// console.log('Exercise 3 correct result: ', [
+//   { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+//   { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+//   { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+//   { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+//   { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+//   { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
+//   { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+//   { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+//   { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+//   { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+//   { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+//   { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+// ]);
 
 
 
@@ -217,11 +221,84 @@ let inventorNamedAda = {};
 
 // Complete the exercise in the space below:
 
+inventorNamedAda = inventors.find((inventor) => {
+    return inventor.first === 'Ada';
+})
+
 // Check your work:
 console.log('Exercise 4 my result: ', inventorNamedAda);
-console.log('Exercise 4 correct result: ', {
-  first: 'Ada',
-  last: 'Lovelace',
-  year: 1815,
-  passed: 1852,
-});
+// console.log('Exercise 4 correct result: ', {
+//   first: 'Ada',
+//   last: 'Lovelace',
+//   year: 1815,
+//   passed: 1852,
+// });
+
+
+
+/*
+Exercise 5: Array.prototype.map()
+
+Use the Array.prototype.map() method to reformat each name in the 'people' 
+array. The goal is to convert names from "Last, First" format to "First Last" 
+format.
+
+Hint: Use the String.prototype.split() method to separate the first and last 
+      names. You can split the string using ', ' as the separator.
+      After splitting the names, rearrange them to the "First Last" format.
+*/
+
+//let firstLast = [];
+
+// Complete the exercise in the space below:
+
+let firstLast = people.map((person) => {
+    let splitPerson = person.split(", ");
+    return `${splitPerson[1]} ${splitPerson[0]}`;
+})
+
+// Check your work:
+console.log('Exercise 5 my result: ', firstLast);
+// console.log('Exercise 5 correct result: ', [
+//   'Carl Becker',
+//   'Samuel Beckett',
+//   'Mick Beddoes',
+//   'Henry Beecher',
+//   'Ludwig Beethoven',
+//   'Menachem Begin',
+//   'Hilaire Belloc',
+//   'Saul Bellow',
+//   'Robert Benchley',
+//   'Peter Benenson',
+//   'David Ben-Gurion',
+//   'Walter Benjamin',
+//   'Tony Benn',
+//   'Chester Bennington',
+//   'Leana Benson',
+//   'Silas Bent',
+//   'Lloyd Bentsen',
+//   'Ric Berger',
+//   'Ingmar Bergman',
+//   'Luciano Berio',
+//   'Milton Berle',
+//   'Irving Berlin',
+//   'Eric Berne',
+//   'Sandra Bernhard',
+//   'Yogi Berra',
+//   'Halle Berry',
+//   'Wendell Berry',
+//   'Erin Bethea',
+//   'Aneurin Bevan',
+//   'Ken Bevel',
+//   'Joseph Biden',
+//   'Ambrose Bierce',
+//   'Steve Biko',
+//   'Josh Billings',
+//   'Frank Biondo',
+//   'Augustine Birrell',
+//   'Elk Black',
+//   'Robert Blair',
+//   'Tony Blair',
+//   'William Blake',
+// ]);
+
